@@ -7,8 +7,8 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-sudo yum update
-sudo dnf update
+sudo yum update -y
+sudo dnf update -y
 
 echo "Enter a user to create for a new sudo user"
 read sudoUserName
