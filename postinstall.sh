@@ -20,3 +20,6 @@ passwd $sudoUserName
 usermod -aG wheel $sudoUserName
 echo "Outputting User Info for : $sudoUserName"
 id $sudoUserName
+
+sed -i -e 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
+systemctl restart sshd.service
